@@ -20,14 +20,14 @@ export default NextAuth({
         },
         password: {
           label: "Password",
-          type: "assword",
+          type: "password",
         },
       },
 
       async authorize(credentials) {
         //using the credentials set from above for logic moving forward
         //GT - if either of these were not added throw the error
-        if (credentials?.email || credentials?.password) {
+        if (!credentials?.email || !credentials?.password) {
           throw new Error("Email and password required");
         }
         // declaring a user that is built from the async prisma function that fetches a user who has email credential matches
@@ -46,7 +46,7 @@ export default NextAuth({
         //the compare method below needs to be imported from bcrypt. It compares a regular string to a hashed string in
         //secret for me and the users benefit
         const isCorrectPassword = await compare(
-          credentials?.password,
+          credentials.password,
           user.hashedPassword
         );
 

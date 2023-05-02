@@ -14,18 +14,20 @@ const Auth = () => {
     );
   }, []);
 
-  const register = async () => {
+  //todo CONVERTED BACK TO USECALLBACK. NEED TO FIGURE OUT THE OTHER OPTION FOR THIS LOGIC
+  const register = useCallback(async () => {
     try {
-      await axios.post("/api/register"),
-        {
-          email,
-          name,
-          password,
-        };
+      //the bug was here with the syntax I was using for the post call 🤦🏾‍♂️
+      //I HAVE TO MKAE SURE I AM READING AND TRYING FIXES FOR BOTH CONSOLE LOGS
+      await axios.post("/api/register", {
+        email,
+        name,
+        password,
+      });
     } catch (error) {
       console.log(error);
     }
-  };
+  }, [email, name, password]);
 
   return (
     //tailwind class name examples
@@ -70,6 +72,7 @@ const Auth = () => {
               />
             </div>
             <button
+              onClick={register}
               className="
               bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition
               "

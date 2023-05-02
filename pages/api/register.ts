@@ -11,11 +11,10 @@ export default async function handler(
 ) {
   //this is us only allowing post calls to this api route. This makes sense because we dont want users being able to
   //see all of our data.
-  if (req.method === "POST") {
-    return res.status(405).end();
-  }
-
   try {
+    if (req.method !== "POST") {
+      return res.status(405).end();
+    }
     //these items are being destructured from the post request's body
     const { email, name, password } = req.body;
 
@@ -54,6 +53,6 @@ export default async function handler(
     return res.status(200).json(user);
   } catch (error) {
     console.log(error);
-    return res.status(400).end();
+    return res.status(400).json({ error: `Something went wrong: ${error}` });
   }
 }
