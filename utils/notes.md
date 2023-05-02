@@ -25,3 +25,7 @@ redirect: false,
 callbackUrl: "/",
 });
 router.push("/");
+
+/////////
+why?
+adapter: PrismaAdapter(prismadb),

@@ -3,9 +3,24 @@ import Credentials from "next-auth/providers/credentials";
 import prismadb from "@/lib/prismadb";
 import { compare } from "bcrypt";
 
+//imports for other providers. again built in with next we have authentication with these
+import GithubProvider from "next-auth/providers/github";
+import GoogleProvider from "next-auth/providers/google";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
+
 export default NextAuth({
-  //stating
   providers: [
+    //syntax for github which aligns with .env
+    GithubProvider({
+      clientId: process.env.GITHUB_ID || "",
+      clientSecret: process.env.GITHUB_SECRET || "",
+    }),
+    //syntax for github which aligns with .env
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID || "",
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
+    }),
+
     //imported Object that takes 3 args. id, name, and cred
     Credentials({
       id: "credentials",
@@ -65,6 +80,8 @@ export default NextAuth({
   },
   //will show us errors and logs in terminal when in development
   debug: process.env.NODE_ENV === "development",
+  //add adapter
+  adapter: PrismaAdapter(prismadb),
   session: {
     strategy: "jwt",
   },
