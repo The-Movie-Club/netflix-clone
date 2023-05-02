@@ -29,3 +29,5 @@ router.push("/");
 /////////
 why?
 adapter: PrismaAdapter(prismadb),
+
+/////what is the next auth api file exactly?

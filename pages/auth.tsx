@@ -117,6 +117,12 @@ const Auth = () => {
                 <FcGoogle size={30}></FcGoogle>
               </div>
               <div
+                // only logic needed to signin with github and add account to existing user
+                onClick={() =>
+                  signIn("github", {
+                    callbackUrl: "/",
+                  })
+                }
                 className="w-10
               h-10
               bg-white
