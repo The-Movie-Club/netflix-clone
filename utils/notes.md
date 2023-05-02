@@ -14,3 +14,14 @@ password,
 console.log(error);
 }
 }, [email, name, password]);
+
+/////////////
+//imported method that takes these two args
+//mostly syntax but would be nice to deep dive later
+await signIn("credentials", {
+email,
+password,
+redirect: false,
+callbackUrl: "/",
+});
+router.push("/");
