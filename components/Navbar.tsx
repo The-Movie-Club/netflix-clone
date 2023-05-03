@@ -1,3 +1,4 @@
+import MobileMenu from "./MobileMenu";
 import NavbarItem from "./NavbarItem";
 import { BsChevronDown } from "react-icons/bs";
 
@@ -64,6 +65,7 @@ const Navbar = () => {
               Browse
             </p>
             <BsChevronDown className="text-white transition" />
+            <MobileMenu />
           </div>
         </div>
       </nav>
