@@ -7,7 +7,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   //this route only allows a get request to retrieve the current user
-  if (req.method === "GET") {
+  if (req.method !== "GET") {
     return res.status(405).end();
   }
   try {
