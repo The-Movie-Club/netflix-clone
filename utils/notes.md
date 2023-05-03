@@ -33,3 +33,24 @@ adapter: PrismaAdapter(prismadb),
 /////what is the next auth api file exactly?
 
 ///what is the lib folder for?
+
+
+
+// function that is run before rendering the component
+// uses built in logic to fetch the context created with useCurrentUser.ts
+export async function getServerSideProps(context: NextPageContext) {
+  const session = await getSession(context);
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/auth",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+}
+///////////////////////////////////////////////////
