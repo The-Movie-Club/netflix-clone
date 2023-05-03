@@ -59,4 +59,4 @@ props: {},
 
 - he adds all the css, html, and logic for a component before moving on
 
--
+- do we love his div soup?
