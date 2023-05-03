@@ -2,12 +2,10 @@ import Input from "@/components/input";
 import axios from "axios";
 import { useCallback, useState } from "react";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/router";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 
 const Auth = () => {
-  const router = useRouter();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -26,14 +24,12 @@ const Auth = () => {
       await signIn("credentials", {
         email,
         password,
-        redirect: false,
-        callbackUrl: "/",
+        callbackUrl: "/profiles",
       });
-      router.push("/");
     } catch (error) {
       console.log(error);
     }
-  }, [email, password, router]);
+  }, [email, password]);
 
   //todo CONVERTED BACK TO USECALLBACK. NEED TO FIGURE OUT THE OTHER OPTION FOR THIS LOGIC
   const register = useCallback(async () => {
