@@ -31,3 +31,5 @@ why?
 adapter: PrismaAdapter(prismadb),
 
 /////what is the next auth api file exactly?
+
+///what is the lib folder for?
