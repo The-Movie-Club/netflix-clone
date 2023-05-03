@@ -100,7 +100,7 @@ const Auth = () => {
               <div
                 onClick={() =>
                   signIn("google", {
-                    callbackUrl: "/",
+                    callbackUrl: "/profiles",
                   })
                 }
                 className="w-10
@@ -121,7 +121,7 @@ const Auth = () => {
                 // only logic needed to signin with github and add account to existing user
                 onClick={() =>
                   signIn("github", {
-                    callbackUrl: "/",
+                    callbackUrl: "/profiles",
                   })
                 }
                 className="w-10
