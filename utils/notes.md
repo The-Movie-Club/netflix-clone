@@ -34,23 +34,29 @@ adapter: PrismaAdapter(prismadb),
 
 ///what is the lib folder for?
 
-
-
 // function that is run before rendering the component
 // uses built in logic to fetch the context created with useCurrentUser.ts
 export async function getServerSideProps(context: NextPageContext) {
-  const session = await getSession(context);
-  if (!session) {
-    return {
-      redirect: {
-        destination: "/auth",
-        permanent: false,
-      },
-    };
-  }
+const session = await getSession(context);
+if (!session) {
+return {
+redirect: {
+destination: "/auth",
+permanent: false,
+},
+};
+}
 
-  return {
-    props: {},
-  };
+return {
+props: {},
+};
 }
 ///////////////////////////////////////////////////
+
+/////////////////////////////////////TAKEAWAYS//////////////////////
+
+- i notice he is building it out in order of authentication. guessing it helps prevent building and missing steps that would grant users more access than they need
+
+- he adds all the css, html, and logic for a component before moving on
+
+-
