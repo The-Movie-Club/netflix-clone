@@ -1,3 +1,5 @@
+import NavbarItem from "./NavbarItem";
+
 const Navbar = () => {
   return (
     <>
@@ -32,7 +34,12 @@ const Navbar = () => {
         lg:flex
         "
           >
-            {/* <NavbarItem /> */}
+            <NavbarItem label="Home" />
+            <NavbarItem label="Series" />
+            <NavbarItem label="Films" />
+            <NavbarItem label="New & Popular" />
+            <NavbarItem label="My List" />
+            <NavbarItem label="Browse by languages" />
           </div>
         </div>
       </nav>
