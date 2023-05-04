@@ -2,12 +2,18 @@ import { useCallback, useState } from "react";
 import MobileMenu from "./MobileMenu";
 import NavbarItem from "./NavbarItem";
 import { BsChevronDown, BsSearch, BsBell } from "react-icons/bs";
+import AccountMenu from "./AccountMenu";
 
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [showAccountMenu, setShowAccountMenu] = useState(false);
 
   const toggleMobileMenu = useCallback(() => {
     setShowMobileMenu((current) => !current);
+  }, []);
+
+  const toggleAccountMenu = useCallback(() => {
+    setShowAccountMenu((current) => !current);
   }, []);
 
   return (
@@ -71,7 +77,11 @@ const Navbar = () => {
           >
             Browse
           </p>
-          <BsChevronDown className="text-white transition" />
+          <BsChevronDown
+            className={`text-white transition ${
+              showMobileMenu ? "rotate-180" : "rotate-0"
+            }`}
+          />
           <MobileMenu visible={showMobileMenu} />
         </div>
         <div
@@ -107,12 +117,26 @@ const Navbar = () => {
           cursor-pointer
           relative
           "
+            onClick={toggleAccountMenu}
           >
             <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
               <img src="/images/default-slate.png" alt="Default icon" />
             </div>
-            <BsChevronDown className="text-white transition" />
-            {/* <AccountMenu /> */}
+            <BsChevronDown
+              //   adds
+              //   effect
+              //   that
+              //   flips
+              //   the
+              //   cursor
+              //   up
+              //   and
+              //   down
+              className={`text-white transition ${
+                showAccountMenu ? "rotate-180" : "rotate-0"
+              }`}
+            />
+            <AccountMenu visible={showAccountMenu} />
           </div>
         </div>
       </div>
