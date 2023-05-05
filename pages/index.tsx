@@ -1,4 +1,5 @@
 import Billboard from "@/components/Billboard";
+import MovieList from "@/components/MovieList";
 import Navbar from "@/components/Navbar";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import { NextPageContext } from "next";
@@ -29,6 +30,9 @@ export default function Home() {
     <>
       <Navbar />
       <Billboard />
+      <div className="pb-40">
+        <MovieList />
+      </div>
     </>
   );
 }
