@@ -53,6 +53,8 @@ props: {},
 }
 ///////////////////////////////////////////////////
 
+go over all of useInfoModal.ts file
+
 /////////////////////////////////////TAKEAWAYS//////////////////////
 
 - i notice he is building it out in order of authentication. guessing it helps prevent building and missing steps that would grant users more access than they need
