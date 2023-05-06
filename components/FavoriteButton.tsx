@@ -21,12 +21,15 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ movieId }) => {
 
   //Spike
   const toggleFavorites = useCallback(async () => {
-    let response;
-    if (isFavorite) {
-      response = await axios.delete("/api/favorite", { data: { movieId } });
-    } else {
-      response = await axios.post("/api/favorite", { movieId });
-    }
+    // let response;
+    // if (isFavorite) {
+    //   response = await axios.delete("/api/favorite", { data: { movieId } });
+    // } else {
+    //   response = await axios.post("/api/favorite", { movieId });
+    // }
+
+    const url = isFavorite ? "/api/unfavorite" : "/api/favorite";
+    const response = await axios.post(url, { movieId });
 
     const updatedFavoriteIds = response?.data?.favoriteIds;
 
