@@ -1,6 +1,7 @@
 import React from "react";
 import { BsFillPlayFill } from "react-icons/bs";
 import FavoriteButton from "./FavoriteButton";
+import router from "next/router";
 interface MovieCardProps {
   data: Record<string, any>;
 }
@@ -79,7 +80,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
             "
           >
             <div
-              onClick={() => {}}
+              onClick={() => router.push(`/watch/${data?.id}`)}
               className="cursor-pointer
 w-6
 h-6
