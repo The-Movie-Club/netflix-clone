@@ -36,11 +36,9 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ movieId }) => {
       favoriteIds: updatedFavoriteIds,
     });
     mutateFavorites();
-    console.log(movieId, "<<<");
   }, [movieId, isFavorite, currentUser, mutate, mutateFavorites]);
 
   const Icon = isFavorite ? AiOutlineCheck : AiOutlinePlus;
-  console.log(movieId);
   return (
     <div
       onClick={toggleFavorites}
