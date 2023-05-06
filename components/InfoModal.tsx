@@ -34,6 +34,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
 
   return (
     <div
+      onClick={handleClose}
       className="
   z-50
   transition
@@ -92,7 +93,7 @@ overflow-hidden
               poster={data?.thumbnailUrl}
             ></video>
             <div
-              onClick={() => handleClose}
+              onClick={handleClose}
               className="
         cursor-pointer
         absolute
