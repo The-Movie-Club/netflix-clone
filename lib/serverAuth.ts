@@ -1,4 +1,6 @@
-// import next builtin type def for the req since I am about to use it
+//Starting the session and called throughout in multiple components to authenticate user prior to access.
+
+// import next builtin type def for the req and res since I am about to use it
 // import next method for starting sessions
 // prismadb because a user model from my db will need to be used
 import { NextApiRequest, NextApiResponse } from "next";
