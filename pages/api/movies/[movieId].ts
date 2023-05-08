@@ -1,3 +1,6 @@
+//dynamic routes need to be in a nested api folder since the file names is how it builds the route
+//the index.js file in that folder will be used as the main route
+
 import { NextApiRequest, NextApiResponse } from "next";
 import prismadb from "@/lib/prismadb";
 import serverAuth from "@/lib/serverAuth";
