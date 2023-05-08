@@ -1,3 +1,6 @@
+// since this route will not have a child/nested route it should be a direct child of the api folder
+//this file connexts the user who started the session
+
 import { NextApiRequest } from "next";
 import { NextApiResponse } from "next";
 import serverAuth from "@/lib/serverAuth";
