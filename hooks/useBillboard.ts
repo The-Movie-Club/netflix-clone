@@ -1,3 +1,5 @@
+//useSWR will be a common method used in hooks. We use it to cache information once it is fetched to help optizmizr
+// the site by being able to handle requests more quickly
 import useSWR from "swr";
 
 import fetcher from "@/lib/fetcher";
