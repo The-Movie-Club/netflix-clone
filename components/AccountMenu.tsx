@@ -1,12 +1,18 @@
+//Components are like normal react components
+
+//Imports
 import useCurrentUser from "@/hooks/useCurrentUser";
 import { signOut } from "next-auth/react";
 import React from "react";
 
+//Component props, export if necessary
 interface AccountMenuProps {
   visible?: boolean;
 }
 
+//SEE Method for declaring the type for the component
 const AccountMenu: React.FC<AccountMenuProps> = ({ visible }) => {
+  //most components will need to know who the current user for global state management
   const { data } = useCurrentUser();
   if (!visible) {
     return null;
