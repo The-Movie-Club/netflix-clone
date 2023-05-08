@@ -1,4 +1,27 @@
+## TODO
+
 look up code status code 405,422
+
+## Takeaways
+
+- i notice he is building it out in order of authentication. guessing it helps prevent building and missing steps that would grant users more access than they need
+
+- he adds all the css, html, and logic for a component before moving on
+
+## Questions
+
+- what is the next auth api file exactly?
+
+- what is the lib folder for?
+
+- why?
+  adapter: PrismaAdapter(prismadb),
+
+- do we love his div soup?
+
+-FavoriteButton as its own component? why?
+
+## Code block review
 
 AUTH.TSX
 //todo CONVERT BACK TO USECALLBACK. NEED TO FIGURE OUT THE OTHER OPTION FOR THIS LOGIC
@@ -16,6 +39,7 @@ console.log(error);
 }, [email, name, password]);
 
 /////////////
+
 //imported method that takes these two args
 //mostly syntax but would be nice to deep dive later
 await signIn("credentials", {
@@ -27,12 +51,6 @@ callbackUrl: "/",
 router.push("/");
 
 /////////
-why?
-adapter: PrismaAdapter(prismadb),
-
-/////what is the next auth api file exactly?
-
-///what is the lib folder for?
 
 // function that is run before rendering the component
 // uses built in logic to fetch the context created with useCurrentUser.ts
@@ -54,13 +72,3 @@ props: {},
 ///////////////////////////////////////////////////
 
 go over all of useInfoModal.ts file
-
-/////////////////////////////////////TAKEAWAYS//////////////////////
-
-- i notice he is building it out in order of authentication. guessing it helps prevent building and missing steps that would grant users more access than they need
-
-- he adds all the css, html, and logic for a component before moving on
-
-- do we love his div soup?
-
--FavoriteButton as its own component? why?
